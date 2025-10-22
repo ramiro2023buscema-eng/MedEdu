@@ -6,53 +6,134 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: 'Poppins', sans-serif; background-color: #f0f8ff; color: #222; transition: background 0.5s;}
+    body {font-family: 'Poppins', sans-serif; background-color: #f5f6fa; color: #222;}
     
     /* Header */
-    header {background-color: #0078d7; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
-    .logo {font-size: 24px; font-weight: 700; letter-spacing: 1px; transition: transform 0.3s;}
-    .logo:hover {transform: scale(1.05);}
-    nav a {color: white; text-decoration: none; margin-left: 20px; font-weight: 600; transition: color 0.3s;}
-    nav a:hover {color: #28a745;}
+    header {
+      background-color: #0b1b3f;
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .logo {font-size: 26px; font-weight: 700; letter-spacing: 1px;}
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {color: #d0e2ff;}
 
-    /* Banner animado */
-    .banner {background: linear-gradient(to right, #0078d7, #28a745); color: white; text-align: center; padding: 80px 20px; overflow: hidden;}
-    .banner h1 {font-size: 42px; margin-bottom: 20px; animation: slideIn 1s ease-out;}
-    .banner p {font-size: 20px; margin-bottom: 30px; animation: fadeIn 2s ease-in;}
-    .banner a {background-color: #fff; color: #0078d7; padding: 15px 30px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: transform 0.3s, background-color 0.3s;}
-    .banner a:hover {transform: scale(1.1); background-color: #f8f8f8;}
+    /* Banner */
+    .banner {
+      background: linear-gradient(to right, #0b1b3f, #2e4a87);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .banner h1 {font-size: 42px; margin-bottom: 15px;}
+    .banner p {font-size: 18px; margin-bottom: 25px;}
+    .banner a {
+      background-color: white;
+      color: #0b1b3f;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    .banner a:hover {transform: scale(1.05); background-color: #f0f0f0;}
 
-    @keyframes slideIn {0% {transform: translateX(-100%);} 100% {transform: translateX(0);}}
-    @keyframes fadeIn {0% {opacity:0;} 100% {opacity:1;}}
+    /* Dropdowns */
+    .dropdown {
+      margin: 40px auto;
+      max-width: 900px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+    .dropdown h2 {
+      text-align: center;
+      color: #0b1b3f;
+      margin-bottom: 20px;
+    }
+    details {
+      margin-bottom: 15px;
+      background-color: #f5f6fa;
+      border-radius: 8px;
+      padding: 10px 15px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 18px;
+      color: #0b1b3f;
+    }
+    .materia {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .materia:last-child {border-bottom: none;}
+    .materia button {
+      background-color: #2e4a87;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    .materia button:hover {background-color: #1b2f61; transform: scale(1.05);}
 
-    /* Productos */
-    .productos {display: flex; flex-wrap: wrap; justify-content: center; padding: 50px 20px; gap: 20px;}
-    .producto {background: white; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 280px; padding: 20px; text-align: center; transition: transform 0.3s, box-shadow 0.3s;}
-    .producto:hover {transform: translateY(-10px) scale(1.02); box-shadow: 0 8px 20px rgba(0,0,0,0.2);}
-    .producto h3 {color: #0078d7; margin-bottom: 15px;}
-    .producto p {margin-bottom: 15px;}
-    .producto span {font-weight: 700; font-size: 18px; display: block; margin-bottom: 15px;}
-    .producto a {display: inline-block; background-color: #28a745; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.3s, background-color 0.3s;}
-    .producto a:hover {transform: scale(1.1); background-color: #1e7a35;}
-
-    /* Ofertas parpadeantes */
-    .ofertas {background-color: #fff8dc; text-align: center; padding: 50px 20px; animation: blink 2s infinite;}
-    @keyframes blink {0%, 50%, 100% {opacity: 1;} 25%, 75% {opacity: 0.7;}}
-    .ofertas h2 {color: #ff8c00; margin-bottom: 20px;}
+    /* Ofertas */
+    .ofertas {
+      background-color: #e8edf5;
+      text-align: center;
+      padding: 50px 20px;
+      margin-top: 50px;
+    }
+    .ofertas h2 {color: #0b1b3f; margin-bottom: 15px;}
     .ofertas p {font-size: 18px;}
 
     /* Contacto */
-    .contacto {background-color: #e6f7ff; padding: 50px 20px; text-align: center;}
-    .contacto h2 {color: #0078d7; margin-bottom: 20px;}
-    .contacto p {margin-bottom: 20px;}
-    .contacto form {max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;}
-    .contacto input, .contacto textarea {padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px; width: 100%; transition: border-color 0.3s;}
-    .contacto input:focus, .contacto textarea:focus {border-color: #0078d7;}
-    .contacto button {padding: 12px; background-color: #28a745; color: white; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.3s, background-color 0.3s;}
-    .contacto button:hover {transform: scale(1.05); background-color: #1e7a35;}
+    .contacto {
+      background-color: #ffffff;
+      padding: 50px 20px;
+      text-align: center;
+      margin-top: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .contacto h2 {color: #0b1b3f; margin-bottom: 15px;}
+    .contacto p {margin-bottom: 15px;}
+    .contacto a {
+      display: inline-block;
+      background-color: #2e4a87;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .contacto a:hover {background-color: #1b2f61;}
 
     /* Footer */
-    footer {background-color: #0078d7; color: white; text-align: center; padding: 20px; margin-top: 50px;}
+    footer {
+      background-color: #0b1b3f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
@@ -60,45 +141,103 @@
   <header>
     <div class="logo">MedEdu</div>
     <nav>
-      <a href="#productos">Resúmenes</a>
-      <a href="#personalizados">Personalizados</a>
-      <a href="#aprende">Aprende</a>
+      <a href="#materias">Materias</a>
+      <a href="#aprende">Aprendé</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
   <section class="banner">
     <h1>Resúmenes de Enfermería</h1>
-    <p>Materiales listos, personalizados o aprende con nosotros</p>
-    <a href="#productos">¡Obtené tu resumen ahora!</a>
+    <p>Materiales listos, personalizados o aprendé con nosotros</p>
+    <a href="#materias">Ver materias</a>
   </section>
 
-  <section id="productos" class="productos">
-    <div class="producto">
-      <h3>Resúmenes ya hechos</h3>
-      <span>USD 10</span>
-      <p>Material completo de cada materia.</p>
-      <a href="mailto:ramiro2023buscema@gmail.com?subject=Pedido%20Resumen%20Ya%20Hecho&body=Hola%2C%20quiero%20comprar%20el%20resumen%20ya%20hecho.%20Por%20favor%20enviame%20los%20datos%20de%20pago.">Pedir</a>
-    </div>
-    <div class="producto" id="personalizados">
-      <h3>Resúmenes personalizados</h3>
-      <span>USD 15</span>
-      <p>Hechos según tu necesidad.</p>
-      <a href="mailto:ramiro2023buscema@gmail.com?subject=Pedido%20Resumen%20Personalizado&body=Hola%2C%20quiero%20un%20resumen%20personalizado.%20Por%20favor%20enviame%20los%20datos%20de%20pago.">Pedir</a>
-    </div>
-    <div class="producto" id="aprende">
-      <h3>Aprende conmigo</h3>
-      <span>USD 5 por materia</span>
-      <p>Acceso a material de aprendizaje personalizado.</p>
-      <a href="mailto:ramiro2023buscema@gmail.com?subject=Aprende%20conmigo&body=Hola%2C%20quiero%20aprender%20sobre%20esta%20materia.%20Por%20favor%20enviame%20los%20datos%20de%20pago.">Pedir</a>
-    </div>
+  <!-- Materias -->
+  <section id="materias" class="dropdown">
+    <h2>Materias</h2>
+    
+    <details>
+      <summary>Primer Año</summary>
+      <div class="materia"><span>Bases del Cuidado en Enfermería</span><button onclick="contactar('Bases del Cuidado en Enfermería')">Pedir</button></div>
+      <div class="materia"><span>Salud Pública y Política Sanitaria</span><button onclick="contactar('Salud Pública y Política Sanitaria')">Pedir</button></div>
+      <div class="materia"><span>Morfofisiología Dinámica Humana</span><button onclick="contactar('Morfofisiología Dinámica Humana')">Pedir</button></div>
+      <div class="materia"><span>Enfermería Comunitaria</span><button onclick="contactar('Enfermería Comunitaria')">Pedir</button></div>
+      <div class="materia"><span>Aspectos Psicosociales y Culturales del Desarrollo</span><button onclick="contactar('Aspectos Psicosociales y Culturales del Desarrollo')">Pedir</button></div>
+      <div class="materia"><span>Físico Química Aplicada</span><button onclick="contactar('Físico Química Aplicada')">Pedir</button></div>
+      <div class="materia"><span>Problemática Sociocultural y de la Salud</span><button onclick="contactar('Problemática Sociocultural y de la Salud')">Pedir</button></div>
+      <div class="materia"><span>Entornos Virtuales de Información y Comunicación</span><button onclick="contactar('Entornos Virtuales de Información y Comunicación')">Pedir</button></div>
+      <div class="materia"><span>Comunicación en Ciencias de la Salud</span><button onclick="contactar('Comunicación en Ciencias de la Salud')">Pedir</button></div>
+      <div class="materia"><span>Práctica Profesionalizante I</span><button onclick="contactar('Práctica Profesionalizante I')">Pedir</button></div>
+    </details>
+
+    <details>
+      <summary>Segundo Año</summary>
+      <div class="materia"><span>Nutrición y Dietoterapia</span><button onclick="contactar('Nutrición y Dietoterapia')">Pedir</button></div>
+      <div class="materia"><span>Psicología Social y Organizacional</span><button onclick="contactar('Psicología Social y Organizacional')">Pedir</button></div>
+      <div class="materia"><span>Microbiología, Parasitología e Inmunología</span><button onclick="contactar('Microbiología, Parasitología e Inmunología')">Pedir</button></div>
+      <div class="materia"><span>Epidemiología y Bioestadística</span><button onclick="contactar('Epidemiología y Bioestadística')">Pedir</button></div>
+      <div class="materia"><span>Farmacología Aplicada</span><button onclick="contactar('Farmacología Aplicada')">Pedir</button></div>
+      <div class="materia"><span>Investigación en Enfermería</span><button onclick="contactar('Investigación en Enfermería')">Pedir</button></div>
+      <div class="materia"><span>Educación para la Salud</span><button onclick="contactar('Educación para la Salud')">Pedir</button></div>
+      <div class="materia"><span>Cuidados de Enfermería en el Adulto</span><button onclick="contactar('Cuidados de Enfermería en el Adulto')">Pedir</button></div>
+      <div class="materia"><span>Cuidados de Enfermería en el Adulto Mayor</span><button onclick="contactar('Cuidados de Enfermería en el Adulto Mayor')">Pedir</button></div>
+      <div class="materia"><span>Práctica Profesionalizante II</span><button onclick="contactar('Práctica Profesionalizante II')">Pedir</button></div>
+    </details>
+
+    <details>
+      <summary>Tercer Año</summary>
+      <div class="materia"><span>Ética y Legislación Aplicada</span><button onclick="contactar('Ética y Legislación Aplicada')">Pedir</button></div>
+      <div class="materia"><span>Cuidados en Salud Mental</span><button onclick="contactar('Cuidados en Salud Mental')">Pedir</button></div>
+      <div class="materia"><span>Cuidado en Emergencias</span><button onclick="contactar('Cuidado en Emergencias')">Pedir</button></div>
+      <div class="materia"><span>Gestión y Autogestión en Enfermería</span><button onclick="contactar('Gestión y Autogestión en Enfermería')">Pedir</button></div>
+      <div class="materia"><span>Cuidados de la Enfermería Materna y del Recién Nacido</span><button onclick="contactar('Cuidados de la Enfermería Materna y del Recién Nacido')">Pedir</button></div>
+      <div class="materia"><span>Cuidados de la Enfermería del Niño y del Adolescente</span><button onclick="contactar('Cuidados de la Enfermería del Niño y del Adolescente')">Pedir</button></div>
+      <div class="materia"><span>Práctica Profesionalizante III</span><button onclick="contactar('Práctica Profesionalizante III')">Pedir</button></div>
+    </details>
+  </section>
+
+  <!-- Aprende -->
+  <section id="aprende" class="dropdown">
+    <h2>Aprendé</h2>
+    <details>
+      <summary>Materias</summary>
+      <div class="materia"><span>Bases del Cuidado en Enfermería</span><button onclick="aprender('Bases del Cuidado en Enfermería')">Aprender</button></div>
+      <div class="materia"><span>Farmacología Aplicada</span><button onclick="aprender('Farmacología Aplicada')">Aprender</button></div>
+      <div class="materia"><span>Cuidados de Enfermería en el Adulto</span><button onclick="aprender('Cuidados de Enfermería en el Adulto')">Aprender</button></div>
+      <div class="materia"><span>Gestión y Autogestión en Enfermería</span><button onclick="aprender('Gestión y Autogestión en Enfermería')">Aprender</button></div>
+      <div class="materia"><span>Salud Pública y Política Sanitaria</span><button onclick="aprender('Salud Pública y Política Sanitaria')">Aprender</button></div>
+    </details>
   </section>
 
   <section class="ofertas">
     <h2>Promociones</h2>
-    <p>Compra 2 resúmenes y obtené un 10% de descuento. ¡Material extra gratis para los primeros 5 compradores!</p>
+    <p>Comprá 2 resúmenes y obtené un 10% de descuento. ¡Material extra gratis para los primeros 5 compradores!</p>
   </section>
 
   <section id="contacto" class="contacto">
-    <h2>Hacé tu pedido</h2>
-    <p>Envíanos un correo a <
+    <h2>Contacto</h2>
+    <p>¿Querés más información o hacer un pedido directo?</p>
+    <a href="mailto:ramiro2023buscema@gmail.com">Enviar correo</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MedEdu - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    function contactar(materia) {
+      const subject = `Pedido de material o resumen: ${materia}`;
+      const body = `Hola, quiero el material o resumen de la materia: ${materia}. Por favor, enviame los datos de pago.`;
+      window.location.href = `mailto:ramiro2023buscema@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    function aprender(materia) {
+      const subject = `Aprender sobre: ${materia}`;
+      const body = `Hola, quiero aprender sobre la materia: ${materia}. Quiero el libro y más información.`;
+      window.location.href = `mailto:ramiro2023buscema@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+  </script>
+
+</body>
+</html>
