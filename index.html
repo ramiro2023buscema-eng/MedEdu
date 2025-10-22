@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>MedEdu - Resúmenes y Materiales de Enfermería</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Poppins', sans-serif; background-color: #f0f8ff; color: #222; transition: background 0.5s;}
+    
+    /* Header */
+    header {background-color: #0078d7; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
+    .logo {font-size: 24px; font-weight: 700; letter-spacing: 1px; transition: transform 0.3s;}
+    .logo:hover {transform: scale(1.05);}
+    nav a {color: white; text-decoration: none; margin-left: 20px; font-weight: 600; transition: color 0.3s;}
+    nav a:hover {color: #28a745;}
+
+    /* Banner animado */
+    .banner {background: linear-gradient(to right, #0078d7, #28a745); color: white; text-align: center; padding: 80px 20px; overflow: hidden;}
+    .banner h1 {font-size: 42px; margin-bottom: 20px; animation: slideIn 1s ease-out;}
+    .banner p {font-size: 20px; margin-bottom: 30px; animation: fadeIn 2s ease-in;}
+    .banner a {background-color: #fff; color: #0078d7; padding: 15px 30px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: transform 0.3s, background-color 0.3s;}
+    .banner a:hover {transform: scale(1.1); background-color: #f8f8f8;}
+
+    @keyframes slideIn {0% {transform: translateX(-100%);} 100% {transform: translateX(0);}}
+    @keyframes fadeIn {0% {opacity:0;} 100% {opacity:1;}}
+
+    /* Productos */
+    .productos {display: flex; flex-wrap: wrap; justify-content: center; padding: 50px 20px; gap: 20px;}
+    .producto {background: white; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 280px; padding: 20px; text-align: center; transition: transform 0.3s, box-shadow 0.3s;}
+    .producto:hover {transform: translateY(-10px) scale(1.02); box-shadow: 0 8px 20px rgba(0,0,0,0.2);}
+    .producto h3 {color: #0078d7; margin-bottom: 15px;}
+    .producto p {margin-bottom: 15px;}
+    .producto span {font-weight: 700; font-size: 18px; display: block; margin-bottom: 15px;}
+    .producto a {display: inline-block; background-color: #28a745; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.3s, background-color 0.3s;}
+    .producto a:hover {transform: scale(1.1); background-color: #1e7a35;}
+
+    /* Ofertas parpadeantes */
+    .ofertas {background-color: #fff8dc; text-align: center; padding: 50px 20px; animation: blink 2s infinite;}
+    @keyframes blink {0%, 50%, 100% {opacity: 1;} 25%, 75% {opacity: 0.7;}}
+    .ofertas h2 {color: #ff8c00; margin-bottom: 20px;}
+    .ofertas p {font-size: 18px;}
+
+    /* Contacto */
+    .contacto {background-color: #e6f7ff; padding: 50px 20px; text-align: center;}
+    .contacto h2 {color: #0078d7; margin-bottom: 20px;}
+    .contacto p {margin-bottom: 20px;}
+    .contacto form {max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;}
+    .contacto input, .contacto textarea {padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px; width: 100%; transition: border-color 0.3s;}
+    .contacto input:focus, .contacto textarea:focus {border-color: #0078d7;}
+    .contacto button {padding: 12px; background-color: #28a745; color: white; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.3s, background-color 0.3s;}
+    .contacto button:hover {transform: scale(1.05); background-color: #1e7a35;}
+
+    /* Footer */
+    footer {background-color: #0078d7; color: white; text-align: center; padding: 20px; margin-top: 50px;}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">MedEdu</div>
+    <nav>
+      <a href="#productos">Resúmenes</a>
+      <a href="#personalizados">Personalizados</a>
+      <a href="#aprende">Aprende</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <h1>Resúmenes de Enfermería</h1>
+    <p>Materiales listos, personalizados o aprende con nosotros</p>
+    <a href="#productos">¡Obtené tu resumen ahora!</a>
+  </section>
+
+  <section id="productos" class="productos">
+    <div class="producto">
+      <h3>Resúmenes ya hechos</h3>
+      <span>USD 10</span>
+      <p>Material completo de cada materia.</p>
+      <a href="mailto:ramiro2023buscema@gmail.com?subject=Pedido%20Resumen%20Ya%20Hecho&body=Hola%2C%20quiero%20comprar%20el%20resumen%20ya%20hecho.%20Por%20favor%20enviame%20los%20datos%20de%20pago.">Pedir</a>
+    </div>
+    <div class="producto" id="personalizados">
+      <h3>Resúmenes personalizados</h3>
+      <span>USD 15</span>
+      <p>Hechos según tu necesidad.</p>
+      <a href="mailto:ramiro2023buscema@gmail.com?subject=Pedido%20Resumen%20Personalizado&body=Hola%2C%20quiero%20un%20resumen%20personalizado.%20Por%20favor%20enviame%20los%20datos%20de%20pago.">Pedir</a>
+    </div>
+    <div class="producto" id="aprende">
+      <h3>Aprende conmigo</h3>
+      <span>USD 5 por materia</span>
+      <p>Acceso a material de aprendizaje personalizado.</p>
+      <a href="mailto:ramiro2023buscema@gmail.com?subject=Aprende%20conmigo&body=Hola%2C%20quiero%20aprender%20sobre%20esta%20materia.%20Por%20favor%20enviame%20los%20datos%20de%20pago.">Pedir</a>
+    </div>
+  </section>
+
+  <section class="ofertas">
+    <h2>Promociones</h2>
+    <p>Compra 2 resúmenes y obtené un 10% de descuento. ¡Material extra gratis para los primeros 5 compradores!</p>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <h2>Hacé tu pedido</h2>
+    <p>Envíanos un correo a <
